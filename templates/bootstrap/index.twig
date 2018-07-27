@@ -1,0 +1,13 @@
+{% extends '_layout' %}
+{% block main %}
+{% for entry in craft.entries.section('bootstrap').limit(10).all() %}
+    <br>
+    <div style="background-color: black; padding: 20px;" align="center"><h2 style="color: #ffffff;">{{ entry.title }}</h2>
+    <h3>{{ entry.bootstrapIntroduction }}</h3>
+    <p><a href="{{ entry.bootstrapUrl }}">{{ entry.bootstrapUrl }}</a><br>
+        <!--{ entry.emailBody }}
+        <a href="{ entry.url }}">{ entry.url }}</a>-->
+        Posted by: <a href="#">{{ entry.author }}</a> on {{ entry.postDate | date('M d, Y')}}</p>
+    </div>
+{% endfor %}
+{% endblock main %}
